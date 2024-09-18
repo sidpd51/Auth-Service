@@ -16,13 +16,13 @@ const prepareAndStartServer = async () => {
         // const repository = new UserRepository()
         // const res = await repository.getById(1)
         // console.log(res)
-        const user = new UserService()
+        // const user = new UserService()
         // const newToken = user.createToken({email:'sidpd@gmail.com',id:1})
         // console.log(newToken)
         // const result = user.verifyToken(newToken,JWT_KEY)
         // console.log(result)
 
-        console.log(user.checkPassword("123@123","$2b$10$SMrSsXFWBXuj6RVvYNXEOeVKVmsOy4jYE6NdpJFqjdjhiPxUV3oT."))
+        // console.log(user.checkPassword("123@123","$2b$10$SMrSsXFWBXuj6RVvYNXEOeVKVmsOy4jYE6NdpJFqjdjhiPxUV3oT."))
     });
 };
 

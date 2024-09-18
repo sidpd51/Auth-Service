@@ -20,7 +20,7 @@ class UserService {
 
     async signIn(email,plainPassword) {
         try {
-            const user = this.userRepository.getByEmail(email);
+            const user = await this.userRepository.getByEmail(email);
             const passwordMatch = this.checkPassword(plainPassword,user.password)
             if(!passwordMatch){
                 console.log("Password doesn't match")
