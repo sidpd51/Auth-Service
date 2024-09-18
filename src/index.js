@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const { PORT, JWT_KEY } = require("./config/serverConfig");
 const apiRoutes = require("./routes/index");
 // const UserRepository = require('./repository/user-repository')
-const UserService = require('./services/user-service')
+// const UserService = require('./services/user-service')
 
 const app = express();
 
@@ -16,11 +16,11 @@ const prepareAndStartServer = async () => {
         // const repository = new UserRepository()
         // const res = await repository.getById(1)
         // console.log(res)
-        const user = new UserService()
-        const newToken = user.createToken({email:'sidpd@gmail.com',id:1})
-        console.log(newToken)
-        const result = user.verifyToken(newToken,JWT_KEY)
-        console.log(result)
+        // const user = new UserService()
+        // const newToken = user.createToken({email:'sidpd@gmail.com',id:1})
+        // console.log(newToken)
+        // const result = user.verifyToken(newToken,JWT_KEY)
+        // console.log(result)
     });
 };
 
