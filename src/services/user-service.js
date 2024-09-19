@@ -18,15 +18,18 @@ class UserService {
         }
     }
 
-    async signIn(email,plainPassword) {
+    async signIn(email, plainPassword) {
         try {
             const user = await this.userRepository.getByEmail(email);
-            const passwordMatch = this.checkPassword(plainPassword,user.password)
-            if(!passwordMatch){
-                console.log("Password doesn't match")
-                throw { error: 'Incorrect password'}
+            const passwordMatch = this.checkPassword(
+                plainPassword,
+                user.password
+            );
+            if (!passwordMatch) {
+                console.log("Password doesn't match");
+                throw { error: "Incorrect password" };
             }
-            const newJWT = this.createToken({email:user.email,id:user.id})
+            const newJWT = this.createToken({ email: user.email, id: user.id });
             return newJWT;
         } catch (error) {
             console.log("something went wrong in sigin process");
@@ -63,6 +66,21 @@ class UserService {
             console.log("something went wrong in password comparison");
             throw { error };
         }
+    }
+
+    async isAuthenticated(token) {
+        try {
+            const response = this.verifyToken(token);
+            if (!response) {
+                throw { error: "Invalid token" };
+            }
+
+            const user = await this.userRepository.getById(response.id);
+            if (!user) {
+                throw { error: "No user with the corresponding token exists" };
+            }
+            return user.id;
+        } catch (error) {}
     }
 }
 
