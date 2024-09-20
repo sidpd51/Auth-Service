@@ -19,13 +19,13 @@ const prepareAndStartServer = async () => {
             db.sequelize.sync({ alter: true });
         }
 
-        const u1 = await User.findByPk(9)
-        const r1 = await Role.findByPk(2)
+        // const u1 = await User.findByPk(9)
+        // const r1 = await Role.findByPk(2)
         // u1.addRoles(r1)
-        const response = await u1.getRoles()
+        // const response = await u1.getRoles()
 
-        console.log(response)
+        // console.log(response)
     });
-};
+}; 
 
 prepareAndStartServer();

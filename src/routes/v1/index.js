@@ -17,10 +17,7 @@ router.post(
 
 router.get("/isAuthenticated", userController.isAuthenticated);
 
-router.get("/dummy", (req, res) => {
-    return req.status(200).json({
-        message: "Ok",
-    });
-});
+
+router.get("/isAdmin", userController.isAdmin);
 
 module.exports = router;
