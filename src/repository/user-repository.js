@@ -6,6 +6,7 @@ class UserRepository {
             const user = await User.create(data);
             return user;
         } catch (error) {
+            console.log(error)
             console.log("something went wrong in repository layer");
             throw { error };
         }

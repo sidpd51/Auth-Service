@@ -15,9 +15,9 @@ const prepareAndStartServer = async () => {
 
     app.listen(PORT, async () => {
         console.log(`App is listen on port no:${PORT}`);
-        if (process.env.DB_SYNC) {
-            db.sequelize.sync({ alter: true });
-        }
+        // if (process.env.DB_SYNC) {
+        //     db.sequelize.sync({ alter: true });
+        // }
 
         // const u1 = await User.findByPk(9)
         // const r1 = await Role.findByPk(2)
